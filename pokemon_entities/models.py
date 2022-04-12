@@ -1,5 +1,4 @@
 from email.policy import default
-from pyexpat import model
 from django.db import models
 
 
@@ -9,6 +8,7 @@ class Pokemon(models.Model):
     title_jp = models.CharField(max_length=200, default='')
     image = models.ImageField(upload_to='pokeimgsp', null=True)
     description = models.TextField(default='Этот покемон еще не описан')
+    previous_evolution = models.ForeignKey("self", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title
