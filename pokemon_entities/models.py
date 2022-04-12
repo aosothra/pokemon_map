@@ -1,3 +1,4 @@
+from email.policy import default
 from pyexpat import model
 from django.db import models
 
@@ -13,3 +14,5 @@ class PokemonEntity(models.Model):
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
     lat = models.FloatField()
     lon = models.FloatField()
+    appearance_at = models.DateTimeField(default=None, null=True)
+    disappearance_at = models.DateTimeField(default=None, null=True)
