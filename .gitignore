@@ -87,6 +87,7 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
+pokemon_entities/migrations
 
 .env
 db.sqlite3
